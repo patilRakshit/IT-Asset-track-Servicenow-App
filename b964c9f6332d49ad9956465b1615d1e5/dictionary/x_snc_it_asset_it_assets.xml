@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="6a16033a83b33210a18ebb96feaad3cd" label="IT Assets" max_length="40" name="x_snc_it_asset_it_assets" type="collection">
+        <element choice="1" default="active" label="Status" max_length="40" name="x_snc_it_asset_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="In Repair" value="in_repair"/>
+                <element inactive_on_update="false" label="Active" value="active"/>
+                <element inactive_on_update="false" label="Retired" value="retired"/>
+            </choice>
+        </element>
+        <element attributes="encode_utf8=false" label="Assigned To" max_length="32" name="x_snc_it_asset_assigned_to" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Asset Name" max_length="200" name="x_snc_it_asset_asset_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Asset Tag" mandatory="true" max_length="100" name="x_snc_it_asset_asset_tag" type="string"/>
+        <element choice="1" label="Category" max_length="40" name="x_snc_it_asset_category" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Hardware" value="hardware"/>
+                <element inactive_on_update="false" label="Software" value="software"/>
+                <element inactive_on_update="false" label="Network" value="network"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Purchase Date" max_length="40" name="x_snc_it_asset_purchase_date" type="glide_date_time"/>
+        <index name="index">
+            <element name="x_snc_it_asset_assigned_to"/>
+        </index>
+    </element>
+</database>
